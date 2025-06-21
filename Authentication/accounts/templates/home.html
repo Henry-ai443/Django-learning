@@ -1,0 +1,20 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>This is the Homepage</h1>
+
+    {%    if user.is_authenticated   %}
+    <div>
+        <p>Hello, {{user.username}}</p>
+         <a href="{% url  'logout'   %}">Logout</a>
+    </div>
+    {%  else   %}
+    <p>Kindly log in</p>
+    <a href="{%  url 'login'  %}">Login here</a>
+    {%   endif   %}
+</body>
+</html>
